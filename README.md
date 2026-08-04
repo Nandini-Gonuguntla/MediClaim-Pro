@@ -38,6 +38,7 @@ A submitted claim can also be rejected:
 
 SUBMITTED
 → REJECTED
+
 User Roles
 Employee
 Submits medical claims
@@ -55,6 +56,7 @@ Creates insurance plans
 Creates claim categories
 Configures category coverage limits
 Assigns plans to employees
+
 Technologies Used
 Java 17
 Spring Boot
@@ -68,31 +70,25 @@ Swagger / OpenAPI
 Postman
 IntelliJ IDEA
 Main Entities
-Employee
 
+Employee:
 Stores employee information and the assigned insurance plan.
 
-InsurancePlan
-
+InsurancePlan:
 Represents a medical reimbursement plan.
 
-ClaimCategory
-
+ClaimCategory:
 Represents categories such as:
-
 Dental
 Vision
 Hospital
 Pharmacy
 Laboratory
-PlanCoverage
 
+PlanCoverage:
 Connects an insurance plan with a claim category and stores the coverage limit.
 
-Claim
-
-Stores submitted claim details, including:
-
+Claim:Stores submitted claim details, including:
 Claim number
 Employee
 Claim category
@@ -104,12 +100,10 @@ Claim status
 Submission time
 Review time
 Rejection reason
-AuditLog
 
-Stores the complete history of important claim actions.
+AuditLog:Stores the complete history of important claim actions.
 
 Example:
-
 CLAIM_SUBMITTED
 CLAIM_APPROVED
 CLAIM_PROCESSING_STARTED
@@ -117,7 +111,6 @@ CLAIM_REIMBURSED
 Coverage Calculation
 
 The remaining coverage is calculated using:
-
 Coverage Limit
 − Approved Claims
 − Processing Claims
@@ -139,6 +132,7 @@ POST /api/claim-categories
 GET /api/claim-categories
 Plan Coverage
 POST /api/plan-coverages
+
 Claims
 POST /api/claims
 GET /api/claims/{claimId}
@@ -148,12 +142,14 @@ PUT /api/claims/{claimId}/approve
 PUT /api/claims/{claimId}/reject
 PUT /api/claims/{claimId}/process
 PUT /api/claims/{claimId}/reimburse
+
 Coverage Balance
 GET /api/claims/employee/{employeeId}/category/{claimCategoryId}/balance
+
 Audit History
 GET /api/audit-logs/claim/{claimId}
-Swagger Documentation
 
+Swagger Documentation
 Run the Spring Boot application and open:
 
 http://localhost:8080/swagger-ui/index.html
