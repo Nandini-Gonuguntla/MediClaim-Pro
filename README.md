@@ -104,7 +104,6 @@ Rejection reason
 AuditLog:Stores the complete history of important claim actions.
 
 Example:
-
 CLAIM_SUBMITTED
 CLAIM_APPROVED
 CLAIM_PROCESSING_STARTED
@@ -112,7 +111,6 @@ CLAIM_REIMBURSED
 Coverage Calculation
 
 The remaining coverage is calculated using:
-
 Coverage Limit
 − Approved Claims
 − Processing Claims
