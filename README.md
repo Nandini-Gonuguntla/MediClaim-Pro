@@ -55,6 +55,7 @@ Creates insurance plans
 Creates claim categories
 Configures category coverage limits
 Assigns plans to employees
+
 Technologies Used
 Java 17
 Spring Boot
